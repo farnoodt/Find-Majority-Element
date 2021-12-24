@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Find_Majority_Element
 {
@@ -28,10 +29,16 @@ namespace Find_Majority_Element
                 }
             }
 
-            foreach (var item in dic)
+            //foreach (var item in dic)
+            //{
+            //    if (item.Value> len / 2)
+            //        return item.Key;
+            //}
+
+            for (int i = 0; i < dic.Count; i++)
             {
-                if (item.Value> len / 2)
-                    return item.Key;
+                if (dic.ElementAt(i).Value > len / 2)
+                   return dic.ElementAt(i).Key;
             }
 
             return -1;
